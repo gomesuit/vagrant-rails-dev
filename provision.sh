@@ -53,11 +53,19 @@ gem install rails -v 5.0.0.1
 # install nodejs
 curl -L git.io/nodebrew | perl - setup
 echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> .bash_profile
-source .bash_profile
+source ~/.bash_profile
 nodebrew install-binary v6.9.5
 nodebrew use v6.9.5
 
+# install heroku cli
+wget -qO- https://toolbelt.heroku.com/install.sh | sh
+echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.bash_profile
+
+
+# install bash-completion
+sudo yum install -y bash-completion
+echo '[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion' >> ~/.bash_profile
+source ~/.bash_profile
+
 # git clone git@github.com:gomesuit/rails-practice.git
-
-
 
