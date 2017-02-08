@@ -65,7 +65,7 @@ echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.bash_profile
 # install bash-completion
 sudo yum install -y bash-completion
 echo '[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion' >> ~/.bash_profile
-source ~/.bash_profile
+#source ~/.bash_profile
 
 # git clone git@github.com:gomesuit/rails-practice.git
 
