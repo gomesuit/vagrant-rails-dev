@@ -47,7 +47,7 @@ ln -s /vagrant/setting/ruby.vim ~/.vim/indent/ruby.vim
 ln -s /vagrant/setting/vimrc ~/.vimrc
 
 # install rails
-yum install -y sqlite-devel
+sudo yum install -y sqlite-devel
 gem install rails -v 5.0.0.1
 
 # install nodejs
