@@ -7,6 +7,7 @@ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 # install ruby
 rbenv install 2.2.3
@@ -24,7 +25,7 @@ sudo make install
 
 # install RSense
 cd
-sudo yum install java-1.8.0-openjdk wget
+sudo yum install -y java-1.8.0-openjdk wget
 wget http://cx4a.org/pub/rsense/rsense-0.3.tar.bz2
 bzip2 -dc rsense-0.3.tar.bz2 | tar xvf -
 sudo cp -r rsense-0.3 /usr/local/lib
@@ -44,4 +45,11 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 mkdir ~/.vim/indent
 ln -s /vagrant/setting/ruby.vim ~/.vim/indent/ruby.vim
 ln -s /vagrant/setting/vimrc ~/.vimrc
+
+# install rails
+gem install rails -v 5.0.0.1
+
+# git clone git@github.com:gomesuit/rails-practice.git
+
+
 
