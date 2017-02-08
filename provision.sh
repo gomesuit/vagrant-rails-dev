@@ -47,7 +47,15 @@ ln -s /vagrant/setting/ruby.vim ~/.vim/indent/ruby.vim
 ln -s /vagrant/setting/vimrc ~/.vimrc
 
 # install rails
+yum install -y sqlite-devel
 gem install rails -v 5.0.0.1
+
+# install nodejs
+curl -L git.io/nodebrew | perl - setup
+echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> .bash_profile
+source .bash_profile
+nodebrew install-binary v6.9.5
+nodebrew use v6.9.5
 
 # git clone git@github.com:gomesuit/rails-practice.git
 
