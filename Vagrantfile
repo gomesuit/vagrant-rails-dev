@@ -10,8 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "vagrant" do |host|
     host.vm.hostname = "vagrant"
     host.vm.network "private_network", ip: "192.168.33.60"
-    host.vm.provision "shell", path: "provision-root.sh"
-    host.vm.provision "shell", privileged: false, path: "provision-user.sh"
+    host.vm.provision "shell", privileged: false, path: "provision.sh"
   end
 
 end
