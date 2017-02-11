@@ -69,3 +69,6 @@ echo '[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && source /usr
 
 # git clone git@github.com:gomesuit/rails-practice.git
 
+sudo yum install -y ImageMagick
+
+
