@@ -36,6 +36,9 @@ NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 
+" slimハイライト 
+NeoBundle 'slim-template/vim-slim'
+
 call neobundle#end()
 
 NeoBundleCheck
