@@ -18,6 +18,9 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'marcus/rsense'
 NeoBundle 'Shougo/neocomplcache-rsense.vim'
 
+" ディレクトリをツリー表示
+NeoBundle 'scrooloose/nerdtree'
+
 " 静的解析
 NeoBundle 'scrooloose/syntastic'
 
@@ -36,8 +39,19 @@ NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 
-" slimハイライト 
+" ==== ruby ====
+" 静的解析
+NeoBundle 'scrooloose/syntastic'
+" slimハイライト
 NeoBundle 'slim-template/vim-slim'
+" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
+" メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
+" ctagsのインストールが別途必要
+NeoBundle 'szw/vim-tags'
+" Rails向けのコマンドを提供する
+NeoBundle 'tpope/vim-rails'
+
 
 call neobundle#end()
 
@@ -81,6 +95,11 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""
+let g:NERDTreeShowBookmarks=1
+autocmd VimEnter * NERDTree
 
 " --------------------------------
 " 基本設定
@@ -162,3 +181,9 @@ set backspace=indent,eol,start
 " ファイル形式別インデントのロードを有効化する
 filetype plugin indent on
 
+" 行末の空白文字をハイライトする
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
